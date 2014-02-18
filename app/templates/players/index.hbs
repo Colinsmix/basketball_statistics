@@ -1,0 +1,26 @@
+<h3>Index</h3>
+
+<p>{{link-to 'New player' 'players.new'}}</p>
+
+<table>
+  <tr>
+    <th>id</th>
+    <th>Team</th>
+    <th>Position</th>
+    <th>Height</th>
+    <th>Weight</th>
+    <th>Firstname</th>
+    <th>Lastname</th>
+  </tr>
+  {{#each}}
+    <tr>
+      <td>{{link-to id 'players.show' this}}</td>
+      <td>{{team_id}}</td>
+      <td>{{position}}</td>
+      <td>{{height}}</td>
+      <td>{{weight}}</td>
+      <td>{{firstname}}</td>
+      <td>{{lastname}}</td>
+    </tr>
+  {{/each}}
+</table>
