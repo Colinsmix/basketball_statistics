@@ -1,5 +1,5 @@
 export default DS.Model.extend({
-  teamId: DS.attr('int'),
+  team: DS.belongsTo('team'),
   position: DS.attr('string'),
   height: DS.attr('int'),
   weight: DS.attr('int'),

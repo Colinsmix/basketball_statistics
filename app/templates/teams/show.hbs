@@ -5,4 +5,9 @@
 <ul>
   <li>Name: {{name}}</li>
   <li>Location: {{location}}</li>
+  {{#each player}}
+    <li> {{player.firstname}} </li>
+  {{else}}
+    <li> No players! </li>
+  {{/each}}
 </ul>
