@@ -46,6 +46,6 @@ class Api::V1::TeamsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def team_params
-    params.require(:team).permit(:name, :location)
+    params.require(:team).permit(:name, :location, :players)
   end
 end

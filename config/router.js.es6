@@ -17,11 +17,10 @@ Router.map(function() {
     this.route('edit', {path: ':player_id/edit'});
   });
   this.resource('teams', function() {
+    this.resource('team', {path: ':team_id'});
     this.route('new');
-    this.route('show', {path: ':team_id'});
     this.route('edit', {path: ':team_id/edit'});
   });
-  this.resource('teams');
 });
 
 export default Router;
