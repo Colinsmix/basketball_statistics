@@ -1,5 +1,5 @@
 export default Ember.Route.extend({
-  model: function() {
+  model: function(model) {
     return this.store.createRecord('player');
   },
   deactivate: function() {

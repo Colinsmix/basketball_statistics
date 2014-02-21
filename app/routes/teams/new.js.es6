@@ -13,7 +13,7 @@ export default Ember.Route.extend({
       var model = this.get('controller.model');
       var _this = this;
       model.save().then(function() {
-        _this.transitionTo('teams.show', model);
+        _this.transitionTo('teams.index');
       });
     },
     cancel: function() {

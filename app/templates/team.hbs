@@ -1,15 +1,16 @@
 <h3>{{id}}</h3>
 
 <p>{{link-to 'Edit' 'teams.edit' this}} <button {{action destroyRecord}}>Destroy</button></p>
+<p><button {{action 'createPlayer' model}}>Add Player</button></p>
+
 
 <ul>
   <li>Name: {{name}}</li>
   <li>Location: {{location}}</li>
   {{#each player in players}}
-    something shoudl happen
+    {{#link-to 'players.show' player}}{{player.firstname}} {{player.lastname}}{{/link-to}}
   {{else}}
-    this shouldnt though
+    No Players Found!
   {{/each}}
-  {{players}}
 </ul>
 
