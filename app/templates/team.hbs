@@ -2,7 +2,7 @@
   <div class="small-6 large-6 columns">
     <ul>
       {{#each player in players}}
-        <li>{{#link-to 'players.show' player}}{{player.firstname}} {{player.lastname}}{{/link-to}}</li>
+        <li>{{#link-to 'players.show' player}}{{player.firstname}} {{player.lastname}}{{/link-to}} - {{player.position}}</li>
       {{else}}
         <p>No Players Found!</p>
       {{/each}}
