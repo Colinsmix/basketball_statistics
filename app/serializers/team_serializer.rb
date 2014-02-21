@@ -1,6 +1,6 @@
 class TeamSerializer < ActiveModel::Serializer
+  embed :ids, include: true
   attributes :id, :name, :location
-  has_many :players, embed: :ids, include: true
-  has_many :homegames, embed: :ids, key: :game_ids
-  has_many :awaygames, embed: :ids, key: :game_ids
+  has_many :players
+  has_many :games
 end

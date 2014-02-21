@@ -7,4 +7,8 @@ class Team < ActiveRecord::Base
   has_many :awaygames, class_name: 'Game', foreign_key: :ateam_id
   has_many :stat_lines, through: :games
 
+  def games
+    homegames + awaygames
+  end
+
 end
