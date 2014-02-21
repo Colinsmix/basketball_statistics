@@ -11,6 +11,7 @@ export default Ember.Route.extend({
   actions: {
     save: function() {
       var model = this.get('controller.model');
+      model.set('team', this.modelFor('team'));
       var _this = this;
       model.save().then(function() {
         _this.transitionTo('players.show', model);
