@@ -1,17 +1,18 @@
-<h3>{{id}}</h3>
-
-<p>{{link-to 'Edit' 'teams.edit' this}} <button {{action destroyRecord}}>Destroy</button></p>
-<p>{{link-to 'Add a Player To This Team' 'players.new' this}}</p>
-
-
-<ul>
-  <li>Name: {{name}}</li>
-  <li>Location: {{location}}</li>
-  {{#each player in players}}
-    {{#link-to 'players.show' player}}{{player.firstname}} {{player.lastname}}{{/link-to}}
-  {{else}}
-    No Players Found!
-  {{/each}}
-</ul>
-
-{{outlet}}
+<div class='row'>
+  <div class="small-6 large-6 columns">
+    <ul>
+      {{#each player in players}}
+        <li>{{#link-to 'players.show' player}}{{player.firstname}} {{player.lastname}}{{/link-to}}</li>
+      {{else}}
+        <p>No Players Found!</p>
+      {{/each}}
+    </ul>
+  </div>
+  <div class="small-6 large-6 columns">
+    <h1>{{location}} {{name}}</h1>
+    <p>{{link-to 'Edit' 'teams.edit' this}} <button {{action destroyRecord}}>Destroy</button></p>
+    <p>{{link-to 'Add a Player To This Team' 'players.new' this}}</p>
+    <br><br><br>
+    {{outlet}}
+  </div>
+</div>

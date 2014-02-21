@@ -2,15 +2,8 @@
 
 <p>{{link-to 'New team' 'teams.new'}}</p>
 
-<table>
-  <tr>
-    <th>id</th>
-    <th>Team</th>
-  </tr>
+<ul>
   {{#each}}
-    <tr>
-      <td>{{link-to id 'team' this}}</td>
-      <td>{{location}} {{name}}</td>
-    </tr>
+    <li>{{#link-to 'team' this}}{{location}} {{name}}{{/link-to}}
   {{/each}}
-</table>
+</ul>
