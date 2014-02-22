@@ -1,6 +1,6 @@
 export default Ember.Route.extend({
   model: function(params) {
-    return this.store.find('stat_line', params.stat_line_id);
+    return this.store.find('statline', params.statline_id);
   },
   deactivate: function() {
     var model = this.get('controller.model');
@@ -11,12 +11,12 @@ export default Ember.Route.extend({
       var model = this.get('controller.model');
       var _this = this;
       model.save().then(function() {
-        _this.transitionTo('stat_lines.show', model);
+        _this.transitionTo('statlines.show', model);
       });
     },
     cancel: function() {
       var model = this.get('controller.model');
-      this.transitionTo('stat_lines.show', model);
+      this.transitionTo('statlines.show', model);
     }
   }
 });

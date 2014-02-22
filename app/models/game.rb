@@ -9,7 +9,7 @@ class Game < ActiveRecord::Base
   belongs_to :team, class_name: 'Team', foreign_key: :ateam_id
 
 
-  has_many :stat_lines
+  has_many :statlines
   has_many :teams
   has_many :players, through: :teams
 

@@ -9,6 +9,6 @@ class Player < ActiveRecord::Base
 
   belongs_to :team
 
-  has_many :stat_lines
+  has_many :statlines
 
 end

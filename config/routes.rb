@@ -1,6 +1,8 @@
 BasketballStatistics::Application.routes.draw do
   namespace :api do
     namespace :v1 do
+      resources :statlines, except: [:new, :edit]
+      resources :stat_lines, except: [:new, :edit]
       resources :stat_lines, except: [:new, :edit]
       resources :games, except: [:new, :edit]
       resources :players, except: [:new, :edit]

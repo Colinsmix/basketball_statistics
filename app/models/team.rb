@@ -5,7 +5,7 @@ class Team < ActiveRecord::Base
   has_many :players
   has_many :homegames, class_name: 'Game', foreign_key: :hteam_id
   has_many :awaygames, class_name: 'Game', foreign_key: :ateam_id
-  has_many :stat_lines, through: :games
+  has_many :statlines, through: :games
 
   def games
     homegames + awaygames

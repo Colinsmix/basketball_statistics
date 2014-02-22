@@ -1,5 +1,5 @@
 export default DS.Model.extend({
-  playerId: DS.attr('number'),
-  gameId: DS.attr('number'),
+  player: DS.belongsTo('player'),
+  game: DS.belongsTo('game'),
   points: DS.attr('number')
 });
