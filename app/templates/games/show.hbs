@@ -2,10 +2,17 @@
 
 <p>{{link-to 'Edit' 'games.edit' this}} <button {{action destroyRecord}}>Destroy</button></p>
 
+<div class="small-6 large-6 columns">
+  <h2> Home Team </h2>
+  <h3>{{hteam.location}} {{hteam.name}} - <strong>{{hteamscore}}</score></h3>
+</div>
+
+<div class="small-6 large-6 columns">
+  <h2> Away Team </h2>
+  <h3>{{ateam.location}} {{ateam.name}} - <strong>{{ateamscore}}</score></h3>
+</div>
 <ul>
-  <li>Hteam: {{hteam_id}}</li>
-  <li>Ateam: {{ateam_id}}</li>
-  <li>Hteam Score: {{hteam_score}}</li>
-  <li>Ateam Score: {{ateam_score}}</li>
-  <li>Winner: {{winner_id}}</li>
+  {{#each statline in statlines}}
+    <li>{{statline.player.firstname}} {{statline.player.lastname}} - {{statline.points}} Points</li>
+  {{/each}}
 </ul>

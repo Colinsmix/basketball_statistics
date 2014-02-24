@@ -7,6 +7,7 @@ export default DS.Model.extend({
   }),
   awaygames: DS.hasMany('game', {
     inverse: 'ateam'
-  })
+  }),
+  games: DS.hasMany('game')
 });
 
