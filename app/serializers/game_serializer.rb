@@ -1,3 +1,5 @@
 class GameSerializer < ActiveModel::Serializer
-  attributes :id, :hteam_id, :ateam_id, :hteam_score, :ateam_score, :winner_id
+  embed :ids, include: true
+  attributes :id, :hteam_id, :ateam_id, :hteamscore, :ateamscore
+  has_many :statlines
 end

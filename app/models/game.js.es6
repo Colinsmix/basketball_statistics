@@ -1,6 +1,7 @@
 export default DS.Model.extend({
   hteam: DS.belongsTo('team'),
   ateam: DS.belongsTo('team'),
-  hteamScore: DS.attr('number'),
-  ateamScore: DS.attr('number'),
+  hteamscore: DS.attr('number'),
+  ateamscore: DS.attr('number'),
+  statlines: DS.hasMany('statline')
 });

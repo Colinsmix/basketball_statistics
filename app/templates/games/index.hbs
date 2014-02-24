@@ -7,16 +7,17 @@
     <th>Ateam</th>
     <th>Hteam Score</th>
     <th>Ateam Score</th>
-    <th>Winner</th>
   </tr>
   {{#each}}
     <tr>
+      {{id}}
       <td>{{link-to id 'games.show' this}}</td>
-      <td>{{hteam_id}}</td>
-      <td>{{ateam_id}}</td>
-      <td>{{hteam_score}}</td>
-      <td>{{ateam_score}}</td>
-      <td>{{winner_id}}</td>
+      <td>{{hteam.location}}</td>
+      <td>{{ateam.location}}</td>
+      <td>{{hteamscore}}</td>
+      <td>{{ateamscore}}</td>
     </tr>
+  {{else}}
+    No Games to Show!
   {{/each}}
 </table>
