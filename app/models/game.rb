@@ -2,8 +2,8 @@ class Game < ActiveRecord::Base
 
   validates_presence_of :hteam_id
   validates_presence_of :ateam_id
-  validates_presence_of :hteam_score
-  validates_presence_of :ateam_score
+  validates_presence_of :hteamscore
+  validates_presence_of :ateamscore
 
   belongs_to :team, class_name: 'Team', foreign_key: :hteam_id
   belongs_to :team, class_name: 'Team', foreign_key: :ateam_id
