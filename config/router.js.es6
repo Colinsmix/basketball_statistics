@@ -7,11 +7,6 @@ Router.map(function() {
     this.route('edit', {path: ':stat_line_id/edit'});
   });
   this.resource('teams', function() {
-    this.resource('games', function() {
-      this.route('new');
-      this.route('show', {path: ':game_id'});
-      this.route('edit', {path: ':game_id/edit'});
-    });
     this.resource('team', {path: ':team_id'}, function() {
       this.resource('players', function() {
         this.route('new');
@@ -21,6 +16,11 @@ Router.map(function() {
     });
     this.route('new');
     this.route('edit', {path: ':team_id/edit'});
+  });
+  this.resource('games', function() {
+    this.route('new');
+    this.route('show', {path: ':game_id'});
+    this.route('edit', {path: ':game_id/edit'});
   });
 });
 

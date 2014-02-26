@@ -1,15 +1,22 @@
 <div>
   <label for="">Hteam</label>
   {{view Ember.Select
-  contentBinding="teamslist"
+  contentBinding="teams"
   valueBinding='hteam'
-  optionLabelPath="content.name"
+  optionLabelPath="content.location"
   optionValuePath="content"
+  prompt="Please select a name"
   }}
 </div>
 <div>
   <label for="">Ateam</label>
-  {{input value=ateam}}
+  {{view Ember.Select
+  contentBinding="teams"
+  valueBinding='ateam'
+  optionLabelPath="content.location"
+  optionValuePath="content"
+  prompt="Please select a name"
+  }}
 </div>
 <div>
   <label for="">Hteam Score</label>

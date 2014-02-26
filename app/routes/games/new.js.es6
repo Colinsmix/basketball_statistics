@@ -8,6 +8,11 @@ export default Ember.Route.extend({
       model.deleteRecord();
     }
   },
+  setupController: function(controller, model) {
+    this._super(controller, model);
+    var teams = this.store.find('team');
+    controller.set('teams', teams);
+  },
   actions: {
     save: function() {
       var model = this.get('controller.model');
