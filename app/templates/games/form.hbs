@@ -1,22 +1,23 @@
 <div>
   <label for="">Hteam</label>
-  {{input value=hteamId}}
+  {{view Ember.Select
+  contentBinding="teamslist"
+  valueBinding='hteam'
+  optionLabelPath="content.name"
+  optionValuePath="content"
+  }}
 </div>
 <div>
   <label for="">Ateam</label>
-  {{input value=ateamId}}
+  {{input value=ateam}}
 </div>
 <div>
   <label for="">Hteam Score</label>
-  {{input value=hteamScore}}
+  {{input value=hteamscore}}
 </div>
 <div>
   <label for="">Ateam Score</label>
-  {{input value=ateamScore}}
-</div>
-<div>
-  <label for="">Winner</label>
-  {{input value=winnerId}}
+  {{input value=ateamscore}}
 </div>
 
 <button type="submit" {{action save}}>Save</button>

@@ -13,6 +13,6 @@
 </div>
 <ul>
   {{#each statline in statlines}}
-    <li>{{statline.player.firstname}} {{statline.player.lastname}} - {{statline.points}} Points</li>
+    <li>{{statline.player.firstname}} {{statline.player.lastname}} from {{statline.player.team.location}} {{statline.player.team.name}} - {{statline.points}} Points</li>
   {{/each}}
 </ul>
