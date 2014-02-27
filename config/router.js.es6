@@ -1,7 +1,7 @@
 var Router = Ember.Router.extend();
 
 Router.map(function() {
-  this.resource('stat_lines', function() {
+  this.resource('statlines', function() {
     this.route('new');
     this.route('show', {path: ':stat_line_id'});
     this.route('edit', {path: ':stat_line_id/edit'});

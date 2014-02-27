@@ -1,10 +1,22 @@
 <div>
-  <label for="">Player</label>
-  {{input value=playerId}}
+  <label for="">Game</label>
+  {{view Ember.Select
+  contentBinding="games"
+  valueBinding='game'
+  optionLabelPath="content.id"
+  optionValuePath="content"
+  prompt="Please select a game"
+  }}
 </div>
 <div>
-  <label for="">Game</label>
-  {{input value=gameId}}
+  <label for="">Player</label>
+  {{view Ember.Select
+  contentBinding="players"
+  valueBinding='player'
+  optionLabelPath="content.lastname"
+  optionValuePath="content"
+  prompt="Please select a player"
+  }}
 </div>
 <div>
   <label for="">Points</label>
