@@ -1,14 +1,13 @@
 <p>{{link-to 'New game' 'games.new'}}</p>
-
-<table>
-  <tr>
-    <th>id</th>
-    <th>Hteam</th>
-    <th>Ateam</th>
-    <th>Hteam Score</th>
-    <th>Ateam Score</th>
-  </tr>
-  {{#each}}
+{{#each}}
+  <table>
+    <tr>
+      <th>id</th>
+      <th>Hteam</th>
+      <th>Ateam</th>
+      <th>Hteam Score</th>
+      <th>Ateam Score</th>
+    </tr>
     <tr>
       <td>{{link-to id 'games.show' this}}</td>
       <td>{{hteam.location}} {{hteam.name}}</td>
@@ -16,7 +15,8 @@
       <td>{{hteamscore}}</td>
       <td>{{ateamscore}}</td>
     </tr>
-  {{else}}
-    No Games to Show!
-  {{/each}}
-</table>
+  </table>
+{{else}}
+  No Games to Show!
+{{/each}}
+

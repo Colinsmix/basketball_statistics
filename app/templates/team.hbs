@@ -10,10 +10,16 @@
     </ul>
   </div>
   <div class="small-3 large-3 columns">
-    <h3> Games </h3>
+    <h3> Home Games </h3>
     <ul>
-      {{#each game in games}}
-        <li>{{#link-to 'games.show' game}}{{game.id}}{{/link-to}}</li>
+      {{#each homegame in homegames}}
+          <li>{{#link-to 'games.show' homegame}}{{homegame.id}}{{/link-to}}</li>
+      {{/each}}
+    </ul>
+    <h3> Away Games </h3>
+    <ul>
+      {{#each awaygame in awaygames}}
+          <li>{{#link-to 'games.show' awaygame}}{{awaygame.id}}{{/link-to}}</li>
       {{/each}}
     </ul>
   </div>
