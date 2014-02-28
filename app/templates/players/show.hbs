@@ -11,12 +11,26 @@
 <table>
     <tr>
       <th>Game</th>
-      <th>Points Scored</th>
+      <th>Pts</th>
+      <th>Reb</th>
+      <th>Ast</th>
+      <th>Stl</th>
+      <th>TO</th>
+      <th>PF</th>
     </tr>
     {{#each statline in statlines}}
       <tr>
-        <td>{{link-to statline.game.id 'games.show' statline.game}}</td>
+        {{#equal team.id team.id }}
+          <td>{{#link-to  'games.show' statline.game}}@ {{statline.game.hteam.location}}{{/link-to}}</td>
+        {{else}}
+          <td>{{#link-to 'games.show' statline.game}}{{statline.game.ateam.location}}{{/link-to}}</td>
+        {{/equal}}
         <td>{{statline.points}}</td>
+        <td>{{statline.rebounds}}</td>
+        <td>{{statline.assists}}</td>
+        <td>{{statline.steals}}</td>
+        <td>{{statline.turnovers}}</td>
+        <td>{{statline.fouls}}</td>
       </tr>
     {{else}}
       No Games to Show!
