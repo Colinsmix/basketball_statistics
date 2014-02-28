@@ -20,7 +20,7 @@ export default Ember.Route.extend({
       var model = this.get('controller.model');
       var _this = this;
       model.save().then(function() {
-        _this.transitionTo('statlines.show', model);
+        _this.transitionTo('statlines.index');
       });
     },
     cancel: function() {

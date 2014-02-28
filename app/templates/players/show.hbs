@@ -7,3 +7,20 @@
   <li>Height: {{heightformat}}</li>
   <li>Weight: {{weight}}</li>
 </ul>
+
+<table>
+    <tr>
+      <th>Game</th>
+      <th>Points Scored</th>
+    </tr>
+    {{#each statline in statlines}}
+      <tr>
+        <td>{{link-to statline.game.id 'games.show' statline.game}}</td>
+        <td>{{statline.points}}</td>
+      </tr>
+    {{else}}
+      No Games to Show!
+    {{/each}}
+  </table>
+
+

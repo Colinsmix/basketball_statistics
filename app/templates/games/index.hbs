@@ -10,8 +10,8 @@
     {{#each}}
       <tr>
         <td>{{link-to id 'games.show' this}}</td>
-        <td>{{hteam.location}} {{hteam.name}}</td>
-        <td>{{ateam.location}} {{ateam.name}}</td>
+        <td>{{#link-to 'team' hteam}} {{hteam.location}} {{hteam.name}}{{/link-to}}</td>
+        <td>{{#link-to 'team' ateam}}{{ateam.location}} {{ateam.name}}{{/link-to}}</td>
         <td>{{hteamscore}}</td>
         <td>{{ateamscore}}</td>
       </tr>

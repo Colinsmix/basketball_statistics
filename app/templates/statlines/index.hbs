@@ -12,8 +12,8 @@
   {{#each}}
     <tr>
       <td>{{link-to id 'statlines.show' this}}</td>
-      <td>{{player_id}}</td>
-      <td>{{game_id}}</td>
+      <td>{{player.firstname}} {{player.lastname}}</td>
+      <td>{{link-to game.id 'games.show' game}}</td>
       <td>{{points}}</td>
     </tr>
   {{/each}}
