@@ -46,6 +46,6 @@ class Api::V1::StatlinesController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def statline_params
-    params.require(:statline).permit(:game_id, :player_id, :points)
+    params.require(:statline).permit(:game_id, :player_id, :points, :rebounds, :assists, :steals, :turnovers, :fouls)
   end
 end
