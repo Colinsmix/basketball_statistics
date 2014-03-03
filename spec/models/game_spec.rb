@@ -1,5 +1,14 @@
 require 'spec_helper'
 
 describe Game do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it { should validate_presence_of :hteam_id }
+  it { should validate_presence_of :ateam_id }
+  it { should validate_presence_of :hteamscore }
+  it { should validate_presence_of :ateamscore }
+
+  it { should belong_to :team }
+
+  it { should have_many :statlines }
+  it { should have_many :teams }
+  it { should have_many(:players).through(:teams) }
 end
