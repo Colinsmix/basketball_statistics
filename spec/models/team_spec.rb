@@ -6,5 +6,14 @@ describe Team do
 
   it { should have_many :homegames }
   it { should have_many :awaygames }
-  it { should have_many(:statlines).through(:games) }
+
+
+  context 'Uniqueness' do
+    before :each do
+      FactoryGirl.create(:team)
+    end
+
+    it { should validate_uniqueness_of(:name).scoped_to(:location) }
+
+  end
 end

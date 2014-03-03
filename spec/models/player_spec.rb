@@ -6,7 +6,7 @@ describe Player do
   it { should validate_presence_of :height }
   it { should validate_presence_of :weight }
   it { should validate_presence_of :firstname }
-  it { should validate_presence_of :lastnam }
+  it { should validate_presence_of :lastname }
 
   it { should belong_to :team }
 

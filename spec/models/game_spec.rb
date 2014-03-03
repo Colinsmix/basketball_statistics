@@ -6,9 +6,7 @@ describe Game do
   it { should validate_presence_of :hteamscore }
   it { should validate_presence_of :ateamscore }
 
-  it { should belong_to :team }
 
   it { should have_many :statlines }
-  it { should have_many :teams }
   it { should have_many(:players).through(:teams) }
 end
