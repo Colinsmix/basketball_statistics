@@ -46,6 +46,6 @@ class Api::V1::GamesController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def game_params
-    params.require(:game).permit(:hteam_id, :ateam_id, :hteamscore, :ateamscore, :winner_id)
+    params.require(:game).permit(:hteam_id, :ateam_id, :hteamscore, :ateamscore, :winner_id, :game_date)
   end
 end

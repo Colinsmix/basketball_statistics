@@ -3,5 +3,6 @@ export default DS.Model.extend({
   ateam: DS.belongsTo('team'),
   hteamscore: DS.attr('number'),
   ateamscore: DS.attr('number'),
+  gameDate: DS.attr('date'),
   statlines: DS.hasMany('statline')
 });
