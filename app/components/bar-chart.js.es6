@@ -28,10 +28,10 @@ export default Ember.Component.extend({
       var x = d3.scale.ordinal().rangeRoundBands([0, width], 0.1);
       var y = d3.scale.linear().range([height, 0]);
       var xAxis = d3.svg.axis().scale(x).orient("bottom");
-      var yAxis = d3.svg.axis().scale(y).orient("left").ticks(5).tickFormat(formatPercent);
+      var yAxis = d3.svg.axis().scale(y).orient("left").ticks(5);
 
-      x.domain(data.map(function(d) { return d.letter; }));
-      y.domain([0, d3.max(data, function(d) { return d.frequency; })]);
+      x.domain(data.map(function(d) { return d.game.id; }));
+      y.domain([0, d3.max(data, function(d) { return d.points; })]);
 
       svg.select(".axis.x").call(xAxis);
       svg.select(".axis.y").call(yAxis);
@@ -40,10 +40,10 @@ export default Ember.Component.extend({
         .data(data)
       .enter().append("rect")
         .attr("class", "bar")
-        .attr("x", function(d) { return x(d.letter); })
+        .attr("x", function(d) { return x(d.game.id); })
         .attr("width", x.rangeBand())
-        .attr("y", function(d) { return y(d.frequency); })
-        .attr("height", function(d) { return height - y(d.frequency); });
+        .attr("y", function(d) { return y(d.points); })
+        .attr("height", function(d) { return height - y(d.points); });
     },
 
     didInsertElement: function(){
