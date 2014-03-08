@@ -3,7 +3,7 @@
     <h3> Players </h3>
     <ul>
       {{#each player in players}}
-        <li>{{#link-to 'players.show' player}}{{player.firstname}} {{player.lastname}}{{/link-to}} - {{player.position}}</li>
+        <li>{{#link-to 'player' player}}{{player.firstname}} {{player.lastname}}{{/link-to}} - {{player.position}}</li>
       {{else}}
         <p>No Players Found!</p>
       {{/each}}

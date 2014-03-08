@@ -10,7 +10,14 @@ Router.map(function() {
     this.resource('team', {path: ':team_id'}, function() {
       this.resource('players', function() {
         this.route('new');
-        this.route('show', {path: ':player_id'});
+        this.resource('player', {path: ':player_id'}, function() {
+          this.route('points');
+          this.route('rebounds');
+          this.route('assists');
+          this.route('steals');
+          this.route('turnovers');
+          this.route('fouls');
+        });
         this.route('edit', {path: ':player_id/edit'});
       });
     });

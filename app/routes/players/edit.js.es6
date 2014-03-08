@@ -11,12 +11,12 @@ export default Ember.Route.extend({
       var model = this.get('controller.model');
       var _this = this;
       model.save().then(function() {
-        _this.transitionTo('players.show', model);
+        _this.transitionTo('player', model);
       });
     },
     cancel: function() {
       var model = this.get('controller.model');
-      this.transitionTo('players.show', model);
+      this.transitionTo('player', model);
     }
   }
 });
