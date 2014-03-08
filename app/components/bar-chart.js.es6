@@ -19,7 +19,8 @@ export default Ember.Component.extend({
       return "translate(0,"+ this.get('h') +")";
     }.property('h'),
 
-    draw: function(){
+    draw: function(type){
+      var type = this.get('type');
       var formatPercent = d3.format(".0%");
       var width = this.get('w');
       var height = this.get('h');
@@ -31,7 +32,30 @@ export default Ember.Component.extend({
       var yAxis = d3.svg.axis().scale(y).orient("left").ticks(5);
 
       x.domain(data.map(function(d) { return d.game.id; }));
-      y.domain([0, d3.max(data, function(d) { return d.points; })]);
+      y.domain([0, d3.max(data, function(d) {
+                                              switch (type)
+                                              {
+                                              case "points":
+                                                return d.points;
+                                                break;
+                                              case "rebounds":
+                                                return d.rebounds;
+                                                break;
+                                              case "assists":
+                                                return d.assists;
+                                                break;
+                                              case "steals":
+                                                return d.steals;
+                                                break;
+                                              case "fouls":
+                                                return d.fouls;
+                                                break;
+                                              case "turnovers":
+                                                return d.turnovers;
+                                                break;
+                                              }
+                                            }
+      )]);
 
       svg.select(".axis.x").call(xAxis);
       svg.select(".axis.y").call(yAxis);
@@ -42,8 +66,53 @@ export default Ember.Component.extend({
         .attr("class", "bar")
         .attr("x", function(d) { return x(d.game.id); })
         .attr("width", x.rangeBand())
-        .attr("y", function(d) { return y(d.points); })
-        .attr("height", function(d) { return height - y(d.points); });
+        .attr("y", function(d){
+                                switch (type)
+                                  {
+                                    case "points":
+                                      return y(d.points);
+                                      break;
+                                    case "rebounds":
+                                      return y(d.rebounds);
+                                      break;
+                                    case "assists":
+                                      return y(d.assists);
+                                      break;
+                                    case "steals":
+                                      return y(d.steals);
+                                      break;
+                                    case "fouls":
+                                      return y(d.fouls);
+                                      break;
+                                    case "turnovers":
+                                      return y(d.turnovers);
+                                      break;
+                                  }
+                                return y(d.points);
+                              })
+        .attr("height", function(d) {
+                                      switch (type)
+                                      {
+                                        case "points":
+                                          return height - y(d.points);
+                                          break;
+                                        case "rebounds":
+                                          return height - y(d.rebounds);
+                                          break;
+                                        case "assists":
+                                          return height - y(d.assists);
+                                          break;
+                                        case "steals":
+                                          return height - y(d.steals);
+                                          break;
+                                        case "fouls":
+                                          return height - y(d.fouls);
+                                          break;
+                                        case "turnovers":
+                                          return height - y(d.turnovers);
+                                          break;
+                                      }
+                                    });
     },
 
     didInsertElement: function(){
