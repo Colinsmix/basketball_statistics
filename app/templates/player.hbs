@@ -7,8 +7,8 @@
   <li>Height: {{heightformat}}</li>
   <li>Weight: {{weight}}</li>
 </ul>
-
-<table>
+{{#if statlines}}
+  <table>
     <tr>
       <th>Game</th>
       <th>{{link-to 'Pts' 'player.points' this}}</th>
@@ -31,9 +31,10 @@
         <td>{{statline.turnovers}}</td>
         <td>{{statline.fouls}}</td>
       </tr>
-    {{else}}
-      No Games to Show!
     {{/each}}
   </table>
+{{else}}
+  <h3>Please Enter Some Statlines!</h3>
+{{/if}}
 
 {{outlet}}

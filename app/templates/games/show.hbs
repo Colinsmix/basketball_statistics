@@ -5,61 +5,65 @@
 <div class="small-6 large-6 columns">
   <h2> Home Team </h2>
   <h3>{{hteam.location}} {{hteam.name}} - <strong>{{hteamscore}}</score></h3>
-  <table>
-    <tr>
-      <th>Player</th>
-      <th>Pos</th>
-      <th>Pt</th>
-      <th>Reb</th>
-      <th>Ast</th>
-      <th>Stl</th>
-      <th>TO</th>
-      <th>PF</th>
-    </tr>
-    {{#each homeline in homelines}}
+  {{#if homelines}}
+    <table>
       <tr>
-        <td>{{homeline.player.firstname}} {{homeline.player.lastname}}</td>
-        <td>{{homeline.player.position}}</td>
-        <td>{{homeline.points}}</td>
-        <td>{{homeline.rebounds}}</td>
-        <td>{{homeline.assists}}</td>
-        <td>{{homeline.steals}}</td>
-        <td>{{homeline.turnovers}}</td>
-        <td>{{homeline.fouls}}</td>
+        <th>Player</th>
+        <th>Pos</th>
+        <th>Pt</th>
+        <th>Reb</th>
+        <th>Ast</th>
+        <th>Stl</th>
+        <th>TO</th>
+        <th>PF</th>
       </tr>
-    {{else}}
-      No Statlines!
-    {{/each}}
-  </table>
+      {{#each homeline in homelines}}
+        <tr>
+          <td>{{homeline.player.firstname}} {{homeline.player.lastname}}</td>
+          <td>{{homeline.player.position}}</td>
+          <td>{{homeline.points}}</td>
+          <td>{{homeline.rebounds}}</td>
+          <td>{{homeline.assists}}</td>
+          <td>{{homeline.steals}}</td>
+          <td>{{homeline.turnovers}}</td>
+          <td>{{homeline.fouls}}</td>
+        </tr>
+      {{/each}}
+    </table>
+  {{else}}
+    <h3>Please Enter Some Statlines!</h3>
+  {{/if}}
 </div>
 
 <div class="small-6 large-6 columns">
   <h2> Away Team </h2>
   <h3>{{ateam.location}} {{ateam.name}} - <strong>{{ateamscore}}</score></h3>
-  <table>
-    <tr>
-      <th>Player</th>
-      <th>Pos</th>
-      <th>Pt</th>
-      <th>Reb</th>
-      <th>Ast</th>
-      <th>Stl</th>
-      <th>TO</th>
-      <th>PF</th>
-    </tr>
-    {{#each awayline in awaylines}}
+  {{#if awaylines}}
+    <table>
       <tr>
-        <td>{{awayline.player.firstname}} {{homeline.player.lastname}}</td>
-        <td>{{awayline.player.position}}</td>
-        <td>{{awayline.points}}</td>
-        <td>{{awayline.rebounds}}</td>
-        <td>{{awayline.assists}}</td>
-        <td>{{awayline.steals}}</td>
-        <td>{{awayline.turnovers}}</td>
-        <td>{{awayline.fouls}}</td>
+        <th>Player</th>
+        <th>Pos</th>
+        <th>Pt</th>
+        <th>Reb</th>
+        <th>Ast</th>
+        <th>Stl</th>
+        <th>TO</th>
+        <th>PF</th>
       </tr>
-    {{else}}
-      No Statlines!
-    {{/each}}
-  </table>
+      {{#each awayline in awaylines}}
+        <tr>
+          <td>{{awayline.player.firstname}} {{homeline.player.lastname}}</td>
+          <td>{{awayline.player.position}}</td>
+          <td>{{awayline.points}}</td>
+          <td>{{awayline.rebounds}}</td>
+          <td>{{awayline.assists}}</td>
+          <td>{{awayline.steals}}</td>
+          <td>{{awayline.turnovers}}</td>
+          <td>{{awayline.fouls}}</td>
+        </tr>
+      {{/each}}
+    </table>
+  {{else}}
+    <h3>Please Enter Some Statlines!</h3>
+  {{/if}}
 </div>
