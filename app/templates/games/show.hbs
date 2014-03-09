@@ -19,7 +19,7 @@
       </tr>
       {{#each homeline in homelines}}
         <tr>
-          <td>{{homeline.player.firstname}} {{homeline.player.lastname}}</td>
+          <td>{{truncate homeline.player.firstname 1}}. {{homeline.player.lastname}}</td>
           <td>{{homeline.player.position}}</td>
           <td>{{homeline.points}}</td>
           <td>{{homeline.rebounds}}</td>
@@ -52,7 +52,7 @@
       </tr>
       {{#each awayline in awaylines}}
         <tr>
-          <td>{{awayline.player.firstname}} {{homeline.player.lastname}}</td>
+          <td>{{truncate awayline.player.firstname 1}}. {{awayline.player.lastname}}</td>
           <td>{{awayline.player.position}}</td>
           <td>{{awayline.points}}</td>
           <td>{{awayline.rebounds}}</td>
