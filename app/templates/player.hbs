@@ -20,10 +20,7 @@
     </tr>
     {{#each statline in statlines}}
       <tr>
-        {{#equal team.id statline.game.ateam.id }}
-          <td>{{#link-to  'games.show' statline.game}}@ {{statline.game.hteam.location}}{{/link-to}}</td>
-        {{/equal}}
-          <td>{{#link-to 'games.show' statline.game}}{{statline.game.ateam.location}}{{/link-to}}</td>
+        <td>{{#link-to  'games.show' statline.game}} {{statline.game.ateam.location}} @ {{statline.game.hteam.location}}{{/link-to}}</td>
         <td>{{statline.points}}</td>
         <td>{{statline.rebounds}}</td>
         <td>{{statline.assists}}</td>
@@ -36,5 +33,6 @@
 {{else}}
   <h3>Please Enter Some Statlines!</h3>
 {{/if}}
+
 
 {{outlet}}

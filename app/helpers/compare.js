@@ -20,7 +20,6 @@ Handlebars.registerHelper('compare', function(lvalue, rvalue, options) {
         throw new Error("Handlerbars Helper 'compare' doesn't know the operator "+operator);
 
     var result = operators[operator](lvalue,rvalue);
-
     if( result ) {
         return options.fn(this);
     } else {
