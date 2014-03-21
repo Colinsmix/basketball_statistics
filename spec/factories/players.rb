@@ -2,11 +2,11 @@
 
 FactoryGirl.define do
   factory :player do
-    team_id ""
-    position "MyString"
-    height ""
-    weight ""
-    firstname "MyString"
-    lastname "MyString"
+    team_id 2
+    position "SF"
+    height 60
+    weight 170
+    firstname "John"
+    lastname "Doe"
   end
 end

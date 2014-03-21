@@ -11,4 +11,11 @@ describe Player do
   it { should belong_to :team }
 
   it { should have_many :statlines }
+
+  context 'Uniqueness' do
+    before(:each) do
+      FactoryGirl.create(:player)
+    end
+    it { should validate_uniqueness_of :firstname }
+  end
 end
